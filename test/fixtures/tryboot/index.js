@@ -3,7 +3,7 @@ const Helper = require('../../helper')
 global.Pear = new class API {
   static RTI = { checkout: { } }
   exit (code) { global.Bare.exit(code) }
-}
+}()
 
 let resolve = () => {}
 const spawnCalled = new Promise((_resolve) => {

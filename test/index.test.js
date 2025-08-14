@@ -3,7 +3,6 @@
 const { test } = require('brittle')
 const path = require('bare-path')
 
-
 const Helper = require('./helper')
 
 const dirname = __dirname

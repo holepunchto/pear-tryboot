@@ -8,16 +8,18 @@
   "files": [],
   "scripts": {
     "format": "prettier --write .",
-    "lint": "prettier --check .",
-    "test:gen": "brittle -r test/all.js test/*.test.js",
-    "test": "brittle-bare --coverage test/all.js"
+    "lint": "prettier --check . && lunte",
+    "test": "npm run test:bare",
+    "test:bare": "brittle-bare test/all.js",
+    "test:gen": "brittle -r test/all.js test/*.test.js"
   },
   "devDependencies": {
     "bare-fs": "^4.2.0",
     "bare-module": "^5.0.2",
     "bare-os": "^3.6.1",
     "bare-path": "^3.0.0",
-    "brittle": "^3.0.0",
+    "brittle": "^3.5.0",
+    "lunte": "^1.0.0",
     "pear-ipc": "^5.5.0",
     "pear-pipe": "^1.0.1",
     "pear-run": "^1.0.0",

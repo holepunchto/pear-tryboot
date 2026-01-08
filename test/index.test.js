@@ -34,7 +34,11 @@ test('tryboot default', async function (t) {
   const constants = require('pear-constants')
   t.is(res.cmd, constants.RUNTIME, 'spawn called with RUNTIME')
   t.ok(res.args.includes('--sidecar'), 'spawn called with --sidecar')
-  t.is(res.options.cwd, constants.PLATFORM_DIR, 'spawn called with cwd PLATFORM')
+  t.is(
+    res.options.cwd,
+    constants.PLATFORM_DIR,
+    'spawn called with cwd PLATFORM'
+  )
 })
 
 test('tryboot with --dht-bootstrap flag', async function (t) {
@@ -52,8 +56,14 @@ test('tryboot with --dht-bootstrap flag', async function (t) {
   const res = JSON.parse(await Helper.untilResult(pipe))
 
   t.ok(res.args.includes('--sidecar'), 'spawn called with --sidecar')
-  t.ok(res.args.includes('--dht-bootstrap'), 'spawn called with --dht-bootstrap')
-  t.ok(res.args.includes('bootstrap-value'), 'spawn called with correct bootstrap value')
+  t.ok(
+    res.args.includes('--dht-bootstrap'),
+    'spawn called with --dht-bootstrap'
+  )
+  t.ok(
+    res.args.includes('bootstrap-value'),
+    'spawn called with correct bootstrap value'
+  )
 
   await Helper.untilClose(pipe)
 })

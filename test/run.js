@@ -15,4 +15,4 @@ global.runRigTeardown = Helper.rig({
     config: { args: run.rest, applink: 'pear://keet' }
   }
 })
-require(run.args.link)
+require(run.args.link + '/index.js')
